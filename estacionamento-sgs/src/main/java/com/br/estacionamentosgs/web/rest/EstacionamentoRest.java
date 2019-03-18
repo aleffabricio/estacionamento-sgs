@@ -30,6 +30,7 @@ public class EstacionamentoRest {
 
       estacionamento.setSaida(dataSaida);
       if (estacionamento.getSaida() != null) {
+    	  //Irá pegar o tempo em minutos da entrada até a saida
          long hr = Duration.between((Temporal) estacionamento.getEntrada().toInstant(), (Temporal) estacionamento.getSaida().toInstant()).toMinutes();
          estacionamento.setPermanencia(hr);
 
