@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-8">
+
+        <!-- START DEFAULT FORM ELEMENTS -->
+        <div class="block">
+            <h4>Cadastro de Pátio</h4>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Descrição</label>
+                    <div class="col-md-10">
+                        <input ng-model="estacionamento.patio.descricao" type="text" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Nº de Vagas</label>
+                    <div class="col-md-10">
+                        <input ng-model="estacionamento.patio.qtdVaga" type="text" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Taxa/hora</label>
+                    <div class="col-md-10">
+                        <input ng-model="estacionamento.patio.taxaHora" type="text" class="form-control" value="R$">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <!-- END DEFAULT FORM ELEMENTS -->
+        <br>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <button class="btn btn-default btn-block" ng-click="estacionamento.salvar()">Salvar</button>
+            </div>
+        </div>
+        <div ng-if="estacionamento.msgSucesso" class="alert alert-success" role="alert" style="top: 20px; right: 20px; position: fixed; width: 310px; height: auto; margin: 0px; padding: 0px; list-style-type: none; z-index: 10000000;">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <strong>Tudo certo!</strong> Já consegui salvar os dados que pediu.
+            </div>
+            <div ng-if="estacionamento.msgErro" class="alert alert-danger" role="alert" style="top: 20px; right: 20px; position: fixed; width: 310px; height: auto; margin: 0px; padding: 0px; list-style-type: none; z-index: 10000000;">
+                <li style="overflow: hidden; background: rgb(182, 70, 69); border-radius: 3px; border: 1px solid rgb(182, 70, 69); box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px; color: rgb(255, 255, 255); opacity: 1; width: 310px; cursor: pointer;">
+                    <div class="noty_bar noty_type_error" id="noty_1428400014848141800">
+                        <div class="noty_message" style="font-size: 11px; line-height: 14px; text-align: left; padding: 8px 10px 9px; width: auto; position: relative;">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span
+                                    class="sr-only">Close</span></button>
+                            <strong>Um erro detectado!</strong> Não consegui salvar o que você pediu.
+                        </div>
+                    </div>
+                </li>
+            </div>
+    </div>
+</div>

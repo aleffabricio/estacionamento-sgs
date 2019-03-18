@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-md-8">
+
+        <!-- START DEFAULT FORM ELEMENTS -->
+        <div class="block">
+            <h4>Cadastro de Veículo</h4>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Placa</label>
+                    <div class="col-md-10">
+                        <input type="text" ng-model="veiculo.veiculo.placa" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Modelo</label>
+                    <div class="col-md-10">
+                        <input type="text" ng-model="veiculo.veiculo.modelo" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Cor</label>
+                    <div class="col-md-10">
+                        <input type="text" ng-model="veiculo.veiculo.cor" class="form-control" value="">
+                    </div>
+                </div>
+
+                <br>
+                <h4>Cadastro de Pessoa</h4>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Nome</label>
+                    <div class="col-md-10">
+                        <input ng-model="veiculo.veiculo.cliente.nome" type="text" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">CPF</label>
+                    <div class="col-md-10">
+                        <input ng-model="veiculo.veiculo.cliente.cpf" type="text" class="form-control" value=""
+                            ui-br-cpf-mask>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Telefone</label>
+                    <div class="col-md-10">
+                        <input ng-model="veiculo.veiculo.cliente.telefone" type="text" class="form-control" placeholder="(99) 999-9999"
+                            ui-br-phone-number maxlength="17">
+                    </div>
+                </div>
+
+                <br>
+                <h4>Vincular ao Estacionamento</h4>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Estacionamento</label>
+                    <div class="col-md-9">
+                        <select class="form-control select" name="status" ng-model="veiculo.veiculo.patio" ng-options="item as item.descricao for item in veiculo.patios">
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- END DEFAULT FORM ELEMENTS -->
+        <br>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4">
+                <button class="btn btn-default btn-block" ng-click="veiculo.salvar()">Salvar</button>
+            </div>
+        </div>
+        <div ng-if="veiculo.msgSucesso" class="alert alert-success" role="alert" style="top: 20px; right: 20px; position: fixed; width: 310px; height: auto; margin: 0px; padding: 0px; list-style-type: none; z-index: 10000000;">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <strong>Tudo ok!</strong> Salvo como solicitado.
+        </div>
+        <div ng-if="veiculo.msgErro" class="alert alert-danger" role="alert" style="top: 20px; right: 20px; position: fixed; width: 310px; height: auto; margin: 0px; padding: 0px; list-style-type: none; z-index: 10000000;">
+            <li style="overflow: hidden; background: rgb(182, 70, 69); border-radius: 3px; border: 1px solid rgb(182, 70, 69); box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px; color: rgb(255, 255, 255); opacity: 1; width: 310px; cursor: pointer;">
+                <div class="noty_bar noty_type_error" id="noty_1428400014848141800">
+                    <div class="noty_message" style="font-size: 11px; line-height: 14px; text-align: left; padding: 8px 10px 9px; width: auto; position: relative;">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span
+                                class="sr-only">Close</span></button>
+                        <strong>Erro encontrado!</strong> Não consegui salvar o que você pediu.
+                    </div>
+                </div>
+            </li>
+        </div>
+    </div>
+</div>
